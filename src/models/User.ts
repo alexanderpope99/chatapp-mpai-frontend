@@ -46,6 +46,15 @@ export default class User {
 			})
 	}
 
+	async logout() {
+		await api.base.get('/auth/logout')
+			.then(response => {
+				sessionStorage.removeItem('jwt');
+				api.base.setToken(undefined);
+			})
+	}
+
+
 	async register(username: string, firstName: string, lastName: string, password: string) {
 		await api.base.post('/auth/register', {
 			username: username,

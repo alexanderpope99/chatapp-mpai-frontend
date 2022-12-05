@@ -17,8 +17,7 @@ const auth = useAuthStore();
 const chat = useChatStore();
 
 const registerSse = () => {
-	console.log("REGISTERING SSE")
-	const eventSource = new EventSourcePolyfill(import.meta.env.VITE_API_URL + '/chats/register-sse',
+	const eventSource = new EventSourcePolyfill(import.meta.env.VITE_API_URL + '/chats/subscribe',
 		{
 			headers: {
 				//@ts-ignore

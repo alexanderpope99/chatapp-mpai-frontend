@@ -25,7 +25,7 @@ const useAuthStore = defineStore({
 			return this.user.register(username, firstName, lastName, password)
 		},
 		logout() {
-			sessionStorage.removeItem('jwt');
+			return this.user.logout()
 		},
 		getUser() {
 			this.user.getUser()
