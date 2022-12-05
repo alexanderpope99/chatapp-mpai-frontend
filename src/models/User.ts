@@ -47,7 +47,7 @@ export default class User {
 	}
 
 	async logout() {
-		await api.base.get('/auth/logout')
+		return await api.base.get('/auth/logout')
 			.then(response => {
 				sessionStorage.removeItem('jwt');
 				api.base.setToken(undefined);

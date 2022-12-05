@@ -8,6 +8,7 @@ import Dropdown from "../../reusables/Dropdown.vue";
 import DropdownLink from "../../reusables/DropdownLink.vue";
 import {RouterLink} from 'vue-router';
 import useAuthStore from "../../../stores/auth";
+import router from "../../../router/index";
 
 const props = defineProps<{
 	showDropdown: boolean,
@@ -23,7 +24,10 @@ const handleCloseOnClickOutside = (event: Event) => {
 
 const logout = () => {
 	const authStore = useAuthStore()
-	authStore.logout();
+	authStore.logout()
+		.then(()=>{
+			router.push({path: '/access/sign-in'})
+		})
 }
 </script>
 
