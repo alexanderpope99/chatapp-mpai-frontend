@@ -61,7 +61,6 @@ const startChat = () => {
 }
 
 const selectContact = (index: number) => {
-	console.log(index)
 	newContacts.value.forEach((contact, contactIndex) => {
 		if (contactIndex === index) {
 			//@ts-ignore
@@ -69,7 +68,6 @@ const selectContact = (index: number) => {
 			//@ts-ignore
 			document.getElementById('contact-item-' + contactIndex).classList.add('dark:bg-gray-600');
 		} else {
-			console.log("IL SCOT")
 			//@ts-ignore
 			document.getElementById('contact-item-' + contactIndex).classList.remove('bg-indigo-50');
 			//@ts-ignore

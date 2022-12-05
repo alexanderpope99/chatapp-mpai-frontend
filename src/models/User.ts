@@ -73,7 +73,7 @@ export default class User {
 
 	createSimpleChat(username: string) {
 		return api.base.post('/chats/simple', {
-			username: username
+			usernames: [username]
 		})
 			.then(res => {
 				return res
