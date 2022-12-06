@@ -77,7 +77,7 @@ provide('activeConversaion', props.activeConversation);
     <div ref="container" class="grow px-5 py-5 flex flex-col overflow-y-scroll scrollbar-hidden">
         <div v-if="chat.status !== 'loading'"
             v-for="(message, index) in (props.activeConversation as Conversation).messages" :key="index">
-            <TimelineDivider v-if="renderDivider(index, index-1)" />
+            <!--<TimelineDivider v-if="renderDivider(index, index-1)" />-->
 
             <MessageBubble :message="message" :self="isSelf(message)" :follow-up="isFollowUp(index, index - 1)"
                 :divider="renderDivider(index, index - 1)" :select-message-to-reply-to="props.selectMessageToReplyTo"
